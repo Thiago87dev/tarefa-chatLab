@@ -16,17 +16,12 @@ function adicionarMensagem(apelido, mensagem) {
 function formatarMensagens() {
   let htmlData = ''
   for (i in listaMensagens) {
-    let item = listaMensagens[i]
-    htmlData += `
+    let mensagem = listaMensagens[i]
+    htmlData += ` 
     <div class="chat-message">
-      <span class="chat-message-apelido">
-        ${item.apelido}
-      </span>
-      <span class="chat-message-item">
-      ${item.mensagem}
-      </span>
-    </div>
-`
+      <span class="chat-message-apelido">${mensagem.apelido}</span>
+      <span class="chat-message-item">${mensagem.mensagem}</span>
+    </div>`
   }
   return htmlData
 
@@ -42,7 +37,7 @@ function commitMessageClickHandler() {
     mensagem.focus()
     return
   }
-  adicionarMensagem('stackx: ', mensagem.value)
+  adicionarMensagem('stackx:', mensagem.value)
   atualizarHTML()
   mensagem.value = ''
 }
@@ -54,11 +49,13 @@ document.addEventListener('keypress',e =>{
       mensagem.focus()
       return
     }
-    adicionarMensagem('stackx: ', mensagem.value)
+    adicionarMensagem('stackx:', mensagem.value)
     atualizarHTML()
     mensagem.value = ''
   }
 })
+
+
 
 window.addEventListener('load', function () { 
   atualizarHTML();
