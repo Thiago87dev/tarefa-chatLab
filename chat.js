@@ -55,7 +55,7 @@ document.addEventListener('keypress',e =>{
       mensagem.focus()
       return
     }
-    adicionarMensagem('BigBoss: ', mensagem.value)
+    adicionarMensagem('stackx: ', mensagem.value)
     atualizarHTML()
     mensagem.value = ''
   }
