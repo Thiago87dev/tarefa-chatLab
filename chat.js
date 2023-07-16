@@ -6,10 +6,10 @@
 
 const listaMensagens = []
 
-function adicionarMensagem(apelido, msg) {
+function adicionarMensagem(apelido, mensagem) {
   listaMensagens.push({
     apelido: apelido,
-    msg: msg
+    mensagem: mensagem
   })
 }
 
@@ -23,7 +23,7 @@ function formatarMensagens() {
         ${item.apelido}
       </span>
       <span class="chat-message-item">
-      ${item.msg}
+      ${item.mensagem}
       </span>
     </div>
 `
@@ -38,26 +38,26 @@ function atualizarHTML() {
 }
 
 function commitMessageClickHandler() {
-  msg = document.querySelector('#message-input')
-  if(!msg.value.trim()){
-    msg.focus()
+  mensagem = document.querySelector('#message-input')
+  if(!mensagem.value.trim()){
+    mensagem.focus()
     return
   }
-  adicionarMensagem('BigBoss: ', msg.value)
+  adicionarMensagem('BigBoss: ', mensagem.value)
   atualizarHTML()
-  msg.value = ''
+  mensagem.value = ''
 }
 
 document.addEventListener('keypress',e =>{
-  msg = document.querySelector('#message-input')
+  mensagem = document.querySelector('#message-input')
   if (e.key === 'Enter'){
-    if(!msg.value.trim()){
-      msg.focus()
+    if(!mensagem.value.trim()){
+      mensagem.focus()
       return
     }
-    adicionarMensagem('BigBoss: ', msg.value)
+    adicionarMensagem('BigBoss: ', mensagem.value)
     atualizarHTML()
-    msg.value = ''
+    mensagem.value = ''
   }
 })
 
