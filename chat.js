@@ -33,8 +33,7 @@ function formatarMensagens() {
 }
 
 function atualizarHTML() {
-  let resultado = document.querySelector('#chat-messages')
-  resultado.innerHTML = formatarMensagens()
+  document.querySelector('#chat-messages').innerHTML = formatarMensagens()
 }
 
 function commitMessageClickHandler() {
