@@ -60,6 +60,10 @@ document.addEventListener('keypress',e =>{
   }
 })
 
+window.addEventListener('load', function () { 
+  atualizarHTML();
+});
+
 // --------------------------------
 // Não remover estas linhas
 // --------------------------------
